@@ -1,7 +1,6 @@
 const os = require('os');
 require('dotenv').config();
 
-// Функция для вывода основной информации о ОС
 function getOSInfo() {
   console.log(`Platform: ${os.platform()}`);
   console.log(`Free Memory: ${os.freemem() / 1024 / 1024 / 1024} GB`);
@@ -10,7 +9,6 @@ function getOSInfo() {
   console.log(`Network Interfaces: ${Object.keys(os.networkInterfaces())}`);
 }
 
-// Функция для проверки свободной памяти
 function checkFreeMemory() {
   const freeMemoryGB = os.freemem() / 1024 / 1024 / 1024;
   if (freeMemoryGB > 4) {
@@ -20,11 +18,10 @@ function checkFreeMemory() {
   }
 }
 
-// Функция для проверки режима доступа
 function checkAccessMode() {
   if (process.env.MODE === 'admin') {
     console.log('Admin mode: Access granted.');
-    getOSInfo(); // Вызываем функцию, если режим доступа разрешен
+    getOSInfo(); 
   } else {
     console.log('User mode: Access denied.');
   }
