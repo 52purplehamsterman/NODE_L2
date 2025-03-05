@@ -27,6 +27,5 @@ function checkAccessMode() {
   }
 }
 
-// Вызов функций
 checkAccessMode();
 checkFreeMemory();
